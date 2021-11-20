@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.8.1)  20 NOV 2021 06:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.8.26)  20 NOV 2021 13:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -596,20 +596,20 @@ e
 \c@lemma=\count314
 \c@example=\count315
 \c@rem=\count316
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 247.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 244.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14> on input line 247.
+(Font)              <14> on input line 244.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9.79996> on input line 247.
+(Font)              <9.79996> on input line 244.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 247.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 247
+(Font)              <7> on input line 244.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 244
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 247
+LaTeX Font Info:    Trying to load font information for U+msb on input line 244
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -626,35 +626,48 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout4 = `gvv_linear_defs.toc'.
 
 
+Underfull \hbox (badness 4072) in paragraph at lines 399--400
+[]\OT1/ptm/m/n/12 Now, $\OML/cmm/m/it/12 d []$ \OT1/ptm/m/n/12 is small-est whe
+n the above
+ []
+
+
+Underfull \hbox (badness 2913) in paragraph at lines 407--411
+[]\OT1/ptm/m/n/12 The dis-tance be-tween the par-al-lel planes
+ []
+
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] (./gvv_linear_defs.aux)
+] [2
+
+]
+(./gvv_linear_defs.aux)
 Package rerunfilecheck Info: File `gvv_linear_defs.out' has not changed.
 (rerunfilecheck)             Checksum: 54A9AD6B2DBC7EA52CFD9A0A828CF725;368.
  ) 
 Here is how much of TeX's memory you used:
- 12378 strings out of 478994
- 183128 string characters out of 5864752
- 502456 words of memory out of 5000000
- 29655 multiletter control sequences out of 15000+600000
+ 12394 strings out of 478994
+ 183336 string characters out of 5864751
+ 510753 words of memory out of 5000000
+ 29661 multiletter control sequences out of 15000+600000
  441000 words of font info for 101 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 71i,14n,74p,507b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,14n,74p,507b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
-r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utm
-b8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/te
-xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/ur
-w/times/utmri8a.pfb>
-Output written on gvv_linear_defs.pdf (1 page, 102101 bytes).
+cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb
+8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw
+/times/utmri8a.pfb>
+Output written on gvv_linear_defs.pdf (2 pages, 104346 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
- 26 named destinations out of 1000 (max. 500000)
+ 130 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
+ 36 named destinations out of 1000 (max. 500000)
  25 words of extra memory for PDF output out of 10000 (max. 10000000)
 
