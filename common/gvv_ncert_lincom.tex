@@ -1,0 +1,1692 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+%\RequirePackage{amsmath}
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+% \usepackage{setspace}
+% \usepackage{gensymb}
+%\doublespacing
+%\singlespacing
+%\usepackage{silence}
+%Disable all warnings issued by latex starting with "You have..."
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+% \usepackage{mathrsfs}
+% \usepackage{txfonts}
+% \usepackage{stfloats}
+% \usepackage{steinmetz}
+% \usepackage{bm}
+% \usepackage{cite}
+% \usepackage{cases}
+% \usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+%\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+ \usepackage{mathtools}
+% \usepackage{tikz}
+% \usepackage{circuitikz}
+% \usepackage{verbatim}
+%\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+%\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+% \usepackage{multicol}
+% \usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+%\lstset{
+%language=tex,
+%frame=single, 
+%breaklines=true
+%}
+
+\begin{document}
+%
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+
+
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\theproblem}
+%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
+%\counterwithin{equation}{enumi}
+
+
+%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+
+\vspace{3cm}
+
+\title{
+	%\logo{
+%Computational Approach to School Geometry
+Points and Vectors
+%	}
+}
+\author{ G V V Sharma$^{*}$% <-this % stops a space
+	\thanks{*The author is with the Department
+		of Electrical Engineering, Indian Institute of Technology, Hyderabad
+		502285 India e-mail:  gadepall@iith.ac.in. All content in this manual is released under GNU GPL.  Free and open source.}
+	
+}	
+%\title{
+%	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
+%}
+
+
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+%\title{Matrix Analysis through Octave}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+%\author{<-this % stops a space
+%\thanks{}}
+%}
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+%\WarningFilter{latex}{LaTeX Warning: You have requested, on input line 117, version}
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% make the title area
+\maketitle
+
+\newpage
+
+\tableofcontents
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\theequation}{\theenumi}
+
+%\begin{abstract}
+%%\boldmath
+%In this letter, an algorithm for evaluating the exact analytical bit error rate  (BER)  for the piecewise linear (PL) combiner for  multiple relays is presented. Previous results were available only for upto three relays. The algorithm is unique in the sense that  the actual mathematical expressions, that are prohibitively large, need not be explicitly obtained. The diversity gain due to multiple relays is shown through plots of the analytical BER, well supported by simulations. 
+%
+%\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway.
+
+% Note that keywords are not normally used for peerreview papers.
+%\begin{IEEEkeywords}
+%Cooperative diversity, decode and forward, piecewise linear
+%\end{IEEEkeywords}
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+%\IEEEpeerreviewmaketitle
+
+\begin{abstract}
+This book provides a computational approach to school geometry based on the NCERT textbooks from Class 6-12.  Links to sample Python codes are available in the text.  
+\end{abstract}
+
+\section{Distance}
+\renewcommand{\theequation}{\theenumi}
+%\begin{enumerate}[label=\arabic*.,ref=\theenumi]
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\item Find the 
+distance between the lines 
+\begin{align}
+L_1: \quad \vec{x} &= \myvec{1\\2\\-4} + \lambda_1\myvec{2 \\ 3 \\6}
+\\
+L_2: \quad \vec{x} &= \myvec{3\\3\\-5} + \lambda_2\myvec{2 \\ 3 \\6}
+\end{align}
+\label{prob:line_dist_parallel}
+%
+\solution Both the lines have the same direction vector, so the lines are parallel. 
+The following code plots 
+%
+\begin{lstlisting}
+codes/line/line_dist_parallel.py
+\end{lstlisting}
+Fig. \ref{fig:line_dist_parallel_py} 
+%
+\begin{figure}[!ht]
+\includegraphics[width=\columnwidth]{./line/figs/line_dist_parallel_py.eps}
+\caption{}
+\label{fig:line_dist_parallel_py}
+\end{figure}
+%
+%
+From Fig. \ref{fig:line_dist_parallel}, the distance is
+%
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{./line/figs/line_dist_parallel.eps}
+\caption{}
+\label{fig:line_dist_parallel}
+\end{figure}
+%
+\begin{align}
+\label{eq:line_dist_parallel}
+\vec{\norm{\vec{A}_2-
+\vec{A}_1}}\sin\theta =\frac{\norm{\vec{m}\times \brak{\vec{A}_2-
+\vec{A}_1}}}{\norm{\vec{m}}}
+\end{align}
+%
+where 
+%
+\begin{align}
+\vec{A}_1 = \myvec{1\\2\\-4},
+\vec{A}_2 = \myvec{3\\3\\-5},
+\vec{m}=\myvec{2 \\ 3 \\6}
+\end{align}
+%
+
+\item Find the shortest distance between the lines 
+\begin{align}
+L_1: \quad \vec{x} &= \myvec{1\\1\\0} + \lambda_1\myvec{2 \\ -1 \\1}
+\\
+L_2: \quad \vec{x} &= \myvec{2\\1\\-1} + \lambda_2\myvec{3 \\ -5 \\2}
+\end{align}
+\label{prob:line_dist_skew}
+%
+\solution  In the given  problem
+\begin{align}
+\vec{A}_1= \myvec{1\\1\\0}, \vec{m}_1=\myvec{2 \\ -1 \\1},
+\vec{A}_2= \myvec{2\\1\\-1}, \vec{m}_2 =\myvec{3 \\ -5 \\2}.
+\end{align}
+%
+The lines will intersect if
+%
+\begin{align}
+\myvec{1\\1\\0} + \lambda_1\myvec{2 \\ -1 \\1}
+= \myvec{2\\1\\-1} + \lambda_2\myvec{3 \\ -5 \\2}
+\\
+\implies \lambda_1\myvec{2 \\ -1 \\1} - \lambda_2\myvec{3 \\ -5 \\2} &= \myvec{2\\1\\-1}-\myvec{1\\1\\0}  
+\\
+\implies \myvec{2 & 3 \\ -1 & -5 \\ 1 & 2}\myvec{\lambda_1\\ \lambda_2} = \myvec{1\\0\\-1}
+\end{align}
+%
+Row reducing the augmented matrix,
+%
+\begin{align}
+\myvec{
+2 & 3 & 1 
+\\
+-1 & -5 & 0
+\\
+1 & 2 & -1
+}
+\xleftrightarrow[]{R_3\leftrightarrow R_1}
+\myvec{
+1 & 2 & -1
+\\
+-1 & -5 & 0
+\\
+2 & 3 & 1 
+}
+\\
+\xleftrightarrow[]{\substack{R_2= R_1+R_2\\R_3 = 2R_1-R_3}}
+\myvec{
+1 & 2 & -1
+\\
+0 & -3 & -1
+\\
+0 & 1 & -3 
+}
+\xleftrightarrow[]{R_2\leftrightarrow R_3}
+\myvec{
+1 & 2 & -1
+\\
+0 & 1 & -3 
+\\
+0 & -3 & -1
+}
+\\
+\xleftrightarrow[]{R_3=3R_2+R_3}
+\myvec{
+1 & 2 & -1
+\\
+0 & 1 & -3 
+\\
+0 & 0 & -10
+}
+\end{align}
+%
+The above matrix has $rank = 3$.  Hence, the lines do not intersect.  Note that the lines are not parallel but they  lie on parallel planes.  Such lines are known as {\em skew} lines.  
+The following code plots 
+Fig. \ref{fig:line_dist_skew} 
+%
+\begin{lstlisting}
+codes/line/line_dist_skew.py
+\end{lstlisting}
+%
+\begin{figure}[!ht]
+\includegraphics[width=\columnwidth]{./line/figs/line_dist_skew.eps}
+\caption{}
+\label{fig:line_dist_skew}
+\end{figure}
+%
+
+The normal to both the lines (and corresponding planes) is 
+%
+\begin{align}
+\label{eq:line_dist_skew_normal}
+\vec{n} = \vec{m}_1\times\vec{m}_2
+\end{align}
+%
+The equation of the second plane is then obtained as
+%
+\begin{align}
+\label{eq:line_dist_skew_plane2}
+\vec{n}^T \vec{x} = \vec{n}^T \vec{A}_2 
+\end{align}
+%
+The distance from $\vec{A}_1$ to the above line is then obtained using 
+\eqref{eq:line_pt_dist} as
+%
+\begin{align}
+\label{eq:line_dist_skew}
+\frac{\abs{\vec{n}^T\brak{\vec{A}_2-\vec{A}_1}}}{\norm{\vec{n}}}
+=
+\frac{\abs{\brak{\vec{A}_2-\vec{A}_1}^T\brak{\vec{m}_1\times\vec{m}_2}}}{\norm{\vec{m}_1\times\vec{m}_2}}
+\end{align}
+%
+
+\item Find the distance of the plane 
+\begin{align}
+\myvec{2 & -3 & 4}\vec{x}-6  = 0
+\end{align}
+%
+from the origin.
+\\
+\solution From \eqref{eq:line_pt_dist}, the distance is obtained as
+%
+\begin{align}
+\frac{\abs{c}}{\norm{\vec{n}}} &= \frac{6}{\sqrt{2^2+3^2+4^2}}
+\\
+&= \frac{6}{\sqrt{29}}
+\end{align}
+%
+
+\item Show that the lines 
+\label{prob:line_coplanar}
+%
+\begin{align}
+\frac{x+3}{-3} = \frac{y-1}{1} &= \frac{z-5}{5}, 
+\\
+\frac{x+1}{-1} = \frac{y-2}{2} &= \frac{z-5}{5} 
+\end{align}
+%
+are coplanar.
+\\
+\solution Since the given lines have different direction vectors, they are not parallel.  From Problem \eqref{prob:line_dist_skew}, the lines are coplanar if the distance between them is 0, i.e. they intersect.  This is possible if 
+%
+\begin{align}
+\label{eq:line_coplanar}
+\brak{\vec{A}_2-\vec{A}_1}^T\brak{\vec{m}_1\times\vec{m}_2} = 0
+\end{align}
+%
+From the given information, 
+%
+\begin{align}
+\vec{A}_2-\vec{A}_1 = \myvec{-3\\1\\5}-\myvec{-1\\2\\5} = \myvec{-2\\-1\\0}
+\end{align}
+%
+$\vec{m}_1\times \vec{m}_2$ is obtained by row reducing the matrix
+%
+\begin{align}
+\myvec{
+-1 & 2 & 5
+\\
+-3 & 1 & 5
+}
+\xleftrightarrow[]{R_2=\frac{R_2-3R_1}{5}}
+\myvec{
+-1 & 2 & 5
+\\
+0 & 1 & 2
+}
+\\
+\xleftrightarrow[]{R_1=-R_1+2R_2}
+\myvec{
+1 & 0 & -1
+\\
+0 & 1 & 2
+}
+\implies \myvec{-1 \\ 2 \\ 5}
+\times \myvec{-3 \\ 1 \\ 5}
+=\myvec{1\\-2\\1}
+\end{align}
+%
+The LHS of \eqref{eq:line_coplanar} is 
+\begin{align}
+\myvec{-2 & -1 & 0}
+\myvec{1\\-2\\1} = 0
+\end{align}
+%
+which completes the proof.  Alternatively, the lines are coplanar if
+%
+\begin{align}
+\mydet{\vec{A}_1-\vec{A}_2 & \vec{m}_1 & \vec{m}_2} = 0
+\end{align}
+%
+
+\item Find the distance of a point \myvec{2\\5\\-3} from the plane
+\begin{align}
+\myvec{6 & -3 & 2}\vec{x}=4
+\end{align}
+%
+\\
+\solution Use \eqref{eq:line_pt_dist}.
+\item Find the distance between the point $\vec{P}=\myvec{6\\5\\9}$ and the plane determined by the points $\bm{A}=\myvec{3\\-1\\2}, \bm{B}=\myvec{5\\2\\4}$ and $\bm{C}=\myvec{-1\\-1\\6}$.
+%
+\\
+\solution Find the equation of the plane using Problem \ref{prob:plane_3pts}.  Find the distance using \eqref{eq:line_pt_dist}.
+%
+\item Find the distance of the point \myvec{1\\-1} from the line $\myvec{12 & -5}\vec{x} = -82$.
+\\
+\solution
+\input{./solutions/line_plane/33/solution.tex}
+\item Find the points on the x-axis, whose distances from the line 
+\begin{align}
+\myvec{4 & 3} \vec{x} = 12
+\end{align}
+are 4 units.
+%
+\\
+\solution
+\input{./solutions/line_plane/34/solution.tex}
+\item What are the points on the y-axis whose distance from the line 
+%
+\begin{align}
+\myvec{4 & 3}\vec{x} = 12
+\end{align}
+%
+4 units.
+\\
+\solution
+\input{./solutions/line_plane/46/solution.tex}
+\item Find the distance of the line
+\begin{align}
+\label{eq:line_L_1}
+L_1: \quad \myvec{4 & 1}\vec{x}  = 0
+\end{align}
+%
+from the point \myvec{4\\1} measured along the line $L_2$ making an angle of $135\degree$ with the positive x-axis.
+%
+\\
+\solution  Let $P$ be the point of intersection of $L_1$ and $L_2$.  The direction vector of $L_2$ is 
+\begin{align}
+\vec{m} = \myvec{1 \\ \tan 135\degree}
+\end{align}
+%
+Since \myvec{4\\1} lies on $L_2$, the equation of $L_2$ is 
+\begin{align}
+\label{eq:line_L_2}
+\vec{x} &= \myvec{4\\1} + \lambda \vec{m} 
+\\
+\label{eq:line_L_2_P}
+\implies \vec{P} &= \myvec{4\\1} + \lambda \vec{m} 
+\\
+\label{eq:line_L_2_P_dist}
+\text{or, } \norm{\vec{P} - \myvec{4\\1}} &= d = \abs{\lambda}\norm{\vec{m} }
+%
+\end{align}
+%
+Since $\vec{P}$ lies on $L_1$, from \eqref{eq:line_L_1},
+%
+\begin{align}
+\myvec{4 & 1}\vec{P}  = 0
+\end{align}
+%
+Substituting from the above in \eqref{eq:line_L_2},
+%
+\begin{align}
+\myvec{4 & 1}\myvec{4\\1} + \lambda \myvec{4 & 1}\vec{m}  &= 0
+\\
+\implies \lambda &= \frac{\myvec{4 & 1}\vec{m}}{17}
+\end{align}
+%
+substituting $\abs{\lambda}$ in \eqref{eq:line_L_2_P_dist} gives the desired answer.
+\item Find the distance of the point \myvec{3\\-5} from the line 
+\begin{align}
+\myvec{3 & – 4}\vec{x}  = 26
+\end{align}
+%
+\solution Use \eqref{eq:line_pt_dist}.
+\item Find the distance between the parallel lines
+%
+\begin{align}
+\myvec{15 & 8}\vec{x} &= 34
+\\
+\myvec{15 & 8}\vec{x} &= -31
+\end{align}
+%
+\solution
+\input{solutions/su2021/2/18.tex}
+\item Find the distance of the point \myvec{-1\\-5\\-10} from the point of intersection of the line
+%
+\begin{align}
+\vec{x} = \myvec{2 \\ -1 \\ 2} + \lambda \myvec{3 \\ 4 \\ 2}  
+\end{align}
+%
+and the plane
+%
+\begin{align}
+\myvec{1 & -1 & 1}\vec{x}&=5
+\end{align}
+%
+\\
+\solution
+\input{./solutions/line_plane/107/solution.tex}
+\item A person standing at the junction of two straight paths represented by the equations 
+%
+\begin{align}
+\myvec{2 & -3}\vec{x} &= 4
+\\
+\myvec{3 & 4}\vec{x} &= 5
+\end{align}
+%
+wants to reach the path whose equation is
+%
+\begin{align}
+\myvec{6 & -7}\vec{x} &= -8
+\end{align}
+%
+in the least time.  Find the equation of the path that he should follow.
+\\
+\solution
+\input{./solutions/line_plane/60/solution.tex}
+\item In each of the following cases, determine the normal to the plane and the distance from the origin.
+\begin{enumerate}[itemsep=2pt]
+\begin{multicols}{2}
+\item
+$
+\myvec{0 & 0 & 1}\vec{x}=2
+$
+\item
+$
+\myvec{1 & 1 & 1}\vec{x}=1
+$
+\item
+$
+\myvec{0 & 5 & 0}\vec{x}=-8
+$
+\item
+$
+\myvec{2 & 3 & -1}\vec{x}=5
+$
+\end{multicols}
+\end{enumerate}
+\solution
+\input{./solutions/line_plane/81/solution.tex}
+\item Distance between the two planes
+%
+\begin{align}
+\myvec{2 & 3 & 4}\vec{x}&=4
+\\
+\myvec{4 & 6 & 8}\vec{x}&=12
+\end{align}
+%
+\solution
+\input{./solutions/line_plane/110/solution.tex}
+\begin{enumerate}[itemsep=2pt]
+\begin{multicols}{2}
+\item 2
+\item 4
+\item 8
+\item $\frac{2}{\sqrt{29}}$
+\end{multicols}
+\end{enumerate}
+\item Find the distance of the line 
+%
+\begin{align}
+\myvec{4 & 7}\vec{x} &= -5
+\end{align}
+%
+from the point \myvec{1\\2} along the line 
+%
+\begin{align}
+\myvec{2 & -1}\vec{x} &= 0.
+\end{align}
+%
+\\
+\solution
+\input{./solutions/line_plane/52/solution.tex}
+
+\end{enumerate}
+\section{Equation}
+\renewcommand{\theequation}{\theenumi}
+%\begin{enumerate}[label=\arabic*.,ref=\theenumi]
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\section{Line Equation}
+\item Find the equation of a plane which is at a distance of $\frac{6}{\sqrt{29}}$ from the origin and has  normal vector $\vec{n}=\myvec{2\\-3\\4}$.
+%
+\\
+\solution From the previous problem, the desired equation is
+%
+\begin{align}
+\myvec{2 & -3 & 4}\vec{x}-6  = 0
+\end{align}
+%
+
+\item Find the equation of the plane which passes through the point $\vec{A}=\myvec{5\\2\\-4}$ and perpendicular to the line with direction vector $\vec{n}=\myvec{2\\3\\-1}$.
+%
+\\
+\solution  The normal vector to the plane is $\vec{n}$. Hence from \eqref{eq:line_norm_vec}, the equation of the plane is 
+%
+\begin{align}
+\vec{n}^T\brak{\vec{x}-\vec{A}} &= 0
+\\
+\implies \myvec{2\\3\\-1}\vec{x} &=\myvec{2&3&-1}\myvec{5\\2\\-4}
+\\
+&=20
+\end{align}
+%
+%The following 
+%%
+%\begin{lstlisting}
+%codes/line/plane_3d.py
+%\end{lstlisting}
+%%
+%\begin{figure}[!ht]
+%\includegraphics[width=\columnwidth]{./line/figs/plane_3d.eps}
+%\caption{}
+%\label{fig:plane_3d}
+%\end{figure}
+%
+
+\item Find the equation of the plane passing through 
+$
+\bm{R} = \myvec{2\\5\\-3},
+\bm{S}= \myvec{-2\\-3\\5}
+$ 
+and 
+$
+\bm{T}= \myvec{5\\3\\-3}.
+$
+\label{prob:plane_3pts}
+\\
+\solution  If the equation of the plane be 
+\begin{align}
+\vec{n}^T\vec{x} &= c,
+\\
+\vec{n}^T\vec{R}=\vec{n}^T\vec{S}=\vec{n}^T\vec{T}&= c,
+\\
+\implies \myvec{\vec{R}-\vec{S} & \vec{S}-\vec{T}}^T\vec{n} &= 0
+\end{align}
+%
+after some algebra.
+Using row reduction on the above matrix, 
+\begin{align}
+\myvec{4 & 8 &-8 \\ -7  & -6 & 8} \xleftrightarrow[]{R_1\leftarrow \frac{R_1}{4}}\myvec{1 & 2 &-2 \\ -7  & -6 & 8}
+\\
+\xleftrightarrow[]{R_2\leftarrow R_2 + 7R_1}
+\myvec{
+1 & 2 &-2 
+\\ 
+0  & 8 & -6
+}
+\xleftrightarrow[]{R_2\leftarrow \frac{R_2}{2}}
+\myvec{
+1 & 2 &-2 
+\\ 
+0  & 4 & -3
+}
+\\
+\xleftrightarrow[]{R_1\leftarrow 2R_1-R_2}
+\myvec{
+2 & 0 &-1 
+\\ 
+0  & 4 & -3
+}
+\end{align}
+%
+Thus, 
+\begin{align}
+\vec{n} &= \myvec{\frac{1}{2}\\\frac{3}{4}\\1} = \myvec{2\\3\\4} \text{ and}
+\\
+c = \vec{n}^{T}\vec{T} = 7
+\end{align}
+%
+Thus, the equation of the plane is 
+%
+\begin{align}
+\myvec{2 & 3 & 4}\vec{n} = 7
+\end{align}
+%
+Alternatively, the normal vector to the plane can be obtained as
+%
+\begin{align}
+\vec{n} = \brak{\vec{R}-\vec{S}} \times \brak{\vec{S}-\vec{T}}
+\end{align}
+%
+The equation of the plane is then obtained from \eqref{eq:line_norm_vec} as 
+%
+\begin{align}
+\label{eq:plane_3pts_cross}
+\vec{n}^T\brak{\vec{x}-\vec{T}} = \sbrak{\brak{\vec{R}-\vec{S}} \times \brak{\vec{S}-\vec{T}}}^T\brak{\vec{x}-\vec{T}} = 0
+\end{align}
+%
+
+\item Find the equation of the plane with intercepts 2, 3 and 4 on the x, y and z axis respectively.
+\\
+\solution From the given information, the plane passes through the points \myvec{2\\0\\0}, \myvec{0\\3\\0} and \myvec{0\\0\\4} respectively. The equation can be obtained using Problem \ref{prob:plane_3pts}.
+
+\item Find the equation of the plane passing through the intersection of the planes 
+%
+\begin{align}
+\label{eq:plane_2p_1pt_1}
+\myvec{1 & 1 & 1}\vec{x}&=6  
+\\
+\myvec{2 & 3 & 4}\vec{x}&=-5
+\label{eq:plane_2p_1pt_2}
+\end{align}
+%
+and the point \myvec{1\\1\\1}.
+\\
+\solution The intersection of the planes is obtained by row reducing the augmented matrix as
+%
+\begin{align}
+\myvec{
+1 & 1 & 1 & 6
+\\
+2 & 3 & 4 & -5
+}
+\xleftrightarrow[]{R_2 = R_2 -2R_1}
+\myvec{
+1 & 1 & 1 & 6
+\\
+0 & 1 & 2 & -17
+}
+\\
+\xleftrightarrow[]{R_1 = R_1 -R_2}
+\myvec{
+1 & 0 & -1 & 23
+\\
+0 & 1 & 2 & -17
+}
+\\
+\implies 
+\vec{x} = \myvec{23\\-17\\0}+\lambda\myvec{1\\-2\\1}
+\end{align}
+%
+Thus, \myvec{23\\-17\\0} is another point on the plane.  The normal vector to the plane is then obtained as
+The normal vector to the plane is then obtained as
+%
+\begin{align}
+\brak{ \myvec{1\\1\\1}-\myvec{23\\-17\\0}}\times \myvec{1\\-2\\1} 
+\end{align}
+%
+which can be obtained by row reducing the matrix
+\begin{align}
+\myvec{
+1 & -2 & 1
+\\
+-22 & 18 & 1
+}
+\xleftrightarrow[]{R_2 = R_2+22R_1}
+\myvec{
+1 & -2 & 1
+\\
+0  & -26 & 23
+}
+\\
+\xleftrightarrow[]{R_1 = 13R_1-R_2}
+\myvec{
+13 & 0 & -10
+\\
+0  & -26 & 23
+}
+\\
+\implies \vec{n} = \myvec{\frac{10}{13}\\\frac{23}{26}\\1} = \myvec{20\\23\\26}
+\end{align}
+%
+Since the plane passes through \myvec{1\\1\\1}, using 
+ \eqref{eq:line_norm_vec},
+%
+\begin{align}
+\myvec{20 & 23 & 26}\brak{\vec{x}- \myvec{1\\1\\1}} &= 0
+\\
+\implies 
+\myvec{20 & 23 & 26}\vec{x} &= 69
+\end{align}
+%
+Alternatively, the plane passing through the intersection of \eqref{eq:plane_2p_1pt_1} and 
+\eqref{eq:plane_2p_1pt_2} has the form 
+%
+\begin{align}
+\label{eq:plane_2p_1pt_lam}
+\myvec{1 & 1 & 1}\vec{x} + \lambda \myvec{2 & 3 & 4}\vec{x} &=6 -5\lambda  
+\end{align}
+%
+Substituting \myvec{1\\1\\1} in the above, 
+%
+\begin{align}
+\myvec{1 & 1 & 1}\myvec{1\\1\\1} + \lambda \myvec{2 & 3 & 4}\myvec{1\\1\\1} &=6 -5\lambda  
+\\
+\implies 3 + 9\lambda &= 6-5\lambda
+\\
+\implies &\lambda = \frac{3}{14}
+\end{align}
+%
+Substituting this value of $\lambda $ in \eqref{eq:plane_2p_1pt_lam} yields the equation of the plane.
+
+\item Find the equation of the plane that contains the point $\myvec{1\\-1\\2}$ and is perpedicular to each of the planes
+\begin{align}
+\myvec{2 & 3 & -2}\vec{x}&=5
+\\
+\myvec{1 & 2 & -3}\vec{x}&=8
+\end{align}
+%
+\solution The normal vector to the desired plane is $\perp$ the normal vectors of both the given planes.  Thus,
+%
+\begin{align}
+\vec{n} = \myvec{2 \\ 3 \\ -2} \times \myvec{1 \\ 2 \\ -3}
+\end{align}
+%
+The equation of the plane is then obtained as
+%
+\begin{align}
+\vec{n}^T\brak{\vec{x}-\vec{A}} = 0
+\end{align}
+%
+\item Find the equation of a line perpendicular to the line 
+\begin{align}
+\myvec{1 & -7}\vec{x} = -5
+\end{align}
+and having x intercept 3.
+\\
+\solution
+\input{./solutions/line_plane/37/A1/latex/solution.tex}
+
+\item Two lines passing through the point \myvec{2\\3} intersect each other at angle of $60\degree$.  If the slope of one line is 2, find the equation of the other line.
+\\
+\solution
+\input{./solutions/line_plane/40/solution.tex}
+\item Find the equation of the right bisector of the line segment joining the points \myvec{3\\4} and \myvec{-1\\2}.
+\\
+\solution
+\input{./solutions/line_plane/41/solution.tex}
+
+\item Find the equations of the lines, which cut-off intercepts on the axes whose sum and product are 1 and -6 respectively.
+%
+\\
+\solution
+\input{./solutions/line_plane/45/solution.tex}
+%%
+\item Find the equation of the line parallel to the y-axis drawn through the point of intersection of the lines 
+%
+\begin{align}
+\myvec{1 & -7}\vec{x} &= -5
+\\
+\myvec{3 & 1}\vec{x} &= 0
+\end{align}
+%
+\\
+\solution
+\input{./solutions/line_plane/47/solution.tex}
+%
+\item Find the equation of the lines through the point \myvec{3\\2} which make an angle of $45\degree$ with the line 
+\begin{align}
+\myvec{1 & -2}\vec{x} &= 3.
+\end{align}
+\\
+\solution
+\input{./solutions/line_plane/49/solution.tex}
+%
+\item Find the equation of the line passing through the point of intersection of the lines 
+%
+\begin{align}
+\myvec{4 & 7}\vec{x} &= 3
+\\
+\myvec{2 & -3}\vec{x} &= -1
+\end{align}
+%
+that has equal intercepts on the axes.
+\\
+\solution
+\input{./solutions/line_plane/50/solution.tex}
+\item Two positions of time and distance are recorded as, when $T = 0, D = 2$ and when $T = 3, D = 8$. Using the concept of slope, find law of motion, i.e., how distance depends upon time.
+%
+\\
+\solution The equation of the line joining the points $\vec{A}=\myvec{0\\2}$ and $\vec{B}=\myvec{3\\8}$ is obtained as
+%
+\begin{align}
+\label{eq:line_two_pt}
+\vec{x} &= \vec{A}+\lambda\brak{\vec{B}-\vec{A}}
+\\
+\implies \myvec{T\\D} &= \myvec{0\\2}-\lambda\myvec{-3\\-6}
+\end{align}
+%
+which can be expressed as
+\begin{align}
+\myvec{2 & -1}\myvec{T\\D} &= \myvec{2 & -1}\myvec{0\\2}\\
+\implies \myvec{2 & -1}\myvec{T\\D} &= -2
+\\
+\implies D = 2+2T
+\end{align}
+
+%
+
+\item A line $L$ is such that its segment between the lines %
+is bisected at the point $\vec{P} = \myvec{1\\5}$.  Obtain its equation.
+\begin{align}
+\label{eq:line_seg}
+L_1: \quad \myvec{5 & -1}\vec{x}  &= -4
+\\
+L_2: \quad \myvec{3 & 4}\vec{x}  &= 4
+\end{align}
+%
+\\
+\solution Let 
+%
+\begin{align}
+L: \quad \vec{x}  &= \vec{P} + \lambda \vec{m}
+\end{align}
+%
+If $L$ intersects $L_1$ and $L_2$ at $\vec{A}$ and $\vec{B}$ respectively, 
+%
+\begin{align}
+\label{eq:line_segA}
+ \vec{A}  &= \vec{P} + \lambda \vec{m}
+\\
+ \vec{B}  &= \vec{P} - \lambda \vec{m}
+\label{eq:line_segB}
+\end{align}
+%
+since $\vec{P}$ bisects $AB$. Note that $\lambda$ is a measure of the distance from $P$  along the line $L$.
+%
+From \eqref{eq:line_seg}, \eqref{eq:line_segA} and \eqref{eq:line_segB},
+%
+\begin{align}
+\myvec{5 & -1} \vec{A}  &= \myvec{5 & -1}\myvec{1\\5} + \lambda \myvec{5 & -1}\vec{m}=-4
+\\
+\myvec{3 & 4} \vec{B}  &= \myvec{3 & 4}\myvec{1\\5} - \lambda \myvec{3 & 4}\vec{m}=4
+\end{align}
+%
+yielding
+%
+\begin{align}
+19\myvec{5 & -1}\vec{m}&=-4 \myvec{3 & 4}\vec{m}
+\\
+\implies \myvec{107 & -3}\vec{m} &= 0
+\\
+\text{or, } \vec{n} = \myvec{107\\-3}
+\end{align}
+%
+after simplification.
+Thus, the equation of the line is 
+\begin{align}
+\vec{n}^T\brak{\vec{x}-\vec{P}} =0
+\end{align}
+\item Find the equations of the lines parallel to the axes and passing through $\vec{A}=\myvec{-2\\3}$.
+%
+\\
+\solution The line parallel to the x-axis has direction vector $\vec{m}=\myvec{1\\0}$.  Hence,its equation is obtined as
+\begin{align}
+%
+\label{eq:line_dir_vec}
+\vec{x} = \myvec{-2\\3} + \lambda_1\myvec{1\\0}
+\end{align}
+%
+Similarly, the equation of the line parallel to the y-axis can be obtained as
+\begin{align}
+\vec{x} = \myvec{-2\\3} + \lambda_1\myvec{0\\1}
+\end{align}
+%
+The following code plots Fig. \ref{fig:line_parallel_axes}
+%
+\begin{lstlisting}
+codes/line/line_parallel_axes.py
+\end{lstlisting}
+%
+\begin{figure}[!ht]
+\includegraphics[width=\columnwidth]{./line/figs/line_parallel_axes.eps}
+\caption{}
+\label{fig:line_parallel_axes}
+\end{figure}
+
+\item Find the equation of the line through $\vec{A}=\myvec{– 2\\ 3}$ with slope –4.
+\\
+\solution The direction vector is $\vec{m} = \myvec{1\\-4}$.  Hence, the normal vector
+\begin{align}
+\label{eq:line_norm_dir}
+\vec{n} &= \myvec{0&-1\\1&0}\vec{m} 
+\\
+&= \myvec{4\\1}
+\end{align}
+%
+The equation of the line in terms of the normal vector is then obtained as
+\begin{align}
+\label{eq:line_norm_vec}
+\vec{n}^T\brak{\vec{x}-\vec{A}} &= 0
+\\
+\implies \myvec{4 & 1} \vec{x} &= -5
+\end{align}
+%
+\item Write the equation of the line through the points \myvec{1\\-1} and \myvec{3\\5}.
+%
+\\
+\solution Use \eqref{eq:line_dir_vec}.
+\item Write the equation of the lines for which $\tan \theta = \frac{1}{2}$, where $\theta$ is the inclination of the line and 
+\label{prob:line_intercept}
+\begin{enumerate}
+\item y-intercept is $-\frac{3}{2}$
+\item x-intercept is 4.
+\end{enumerate}
+%
+\solution From the given information, $\tan \theta = \frac{1}{2}=m $.
+\begin{enumerate}
+\item y-intercept is $-\frac{3}{2} \implies $ the line cuts through the y-axis at $\myvec{0\\-\frac{3}{2}}$.
+\item x-intercept is 4 $\implies$ the line cuts through the x-axis at $\myvec{4\\0}$.
+\end{enumerate}
+%
+Use the above information get the equations for the lines.
+%
+\item Find the equation of a line through the point \myvec{5\\2\\-4} and parallel to the vector \myvec{3\\2\\-8}.
+\\
+\solution The equation of the line is 
+\begin{align}
+\vec{x} &= \myvec{5 & 2\\-4} + \lambda \myvec{3\\2\\-8}
+\end{align}
+%
+\item Find the equation of a line passing through the points \myvec{-1\\0\\2} and \myvec{3\\4\\6}.
+\\
+\solution Using  \eqref{eq:line_two_pt}, the desired equation of the line is
+\begin{align}
+\vec{x} &= \myvec{-1 & 0\\2} + \lambda \myvec{4\\4\\4}
+\\
+&= \myvec{-1 & 0\\2} + \lambda \myvec{1\\1\\1}
+\end{align}
+%
+\item If
+\begin{align}
+%
+\label{eq:line_3d}
+\frac{x+3}{2} = \frac{y-5}{4} = \frac{z+6}{2} = \lambda
+\end{align}
+%
+find the equation of the line.
+\label{prob:line_3d}
+\\
+\solution The line can be expressed from \eqref{eq:line_3d} as
+%
+\begin{align}
+%\label{eq:line_3d}
+\myvec{x\\y\\z} &= \myvec{-3+2\lambda\\5+4\lambda\\-6+2\lambda}
+\\
+\implies \vec{x} &= \myvec{-3\\5\\-6} + \lambda \myvec{2\\4\\2}
+\\
+\implies \vec{x} &= \myvec{-3\\5\\-6} + \lambda \myvec{1\\2\\1}
+\end{align}
+%
+\item Find the equation of the line, which makes intercepts -3 and 2 on the x and y axes respectively.
+\\
+\solution 
+\input{solutions/july/1/23/Assignment2.tex}
+\item Find the equation of the line whose perpendicular distance from the origin is 4 units and the angle which the normal makes with the positive direction of x-axis is $15\degree$.
+%
+\\
+\solution  In Fig. \ref{fig:line_pt_dist}, the foot of the perpendicular $P$ is the intersection of the lines $L$ and $M$.  Thus, 
+\begin{align}
+\label{eq:line_pt_dist_foot}
+\vec{n}^T\vec{P} &= c
+\\
+\label{eq:line_pt_dist_foot_normal}
+\vec{P} = \vec{A} + \lambda\vec{n}
+\\
+\text{or, } \vec{n}^T\vec{P} = \vec{n}^T\vec{A} + \lambda\norm{\vec{n}}^2 = c
+\\
+\label{eq:line_pt_dist_lam}
+\implies -\lambda = \frac{\vec{n}^T\vec{A}-c}{\norm{\vec{n}}^2}
+\end{align}
+%
+Also, the distance between $\vec{A}$ and $L$ is obtained from 
+%
+\begin{align}
+\vec{P} &= \vec{A} + \lambda\vec{n}
+\\
+\label{eq:line_pt_dist_lam_norm}
+\implies \norm{\vec{P} - \vec{A}}  = \abs{\lambda}\norm{\vec{n}}
+\end{align}
+%
+From \eqref{eq:line_pt_dist_lam}
+and \eqref{eq:line_pt_dist_lam_norm}
+%
+\begin{align}
+\label{eq:line_pt_dist}
+\norm{\vec{P} - \vec{A}}  = \frac{\abs{\vec{n}^T\vec{A}-c}}{\norm{\vec{n}}}
+\end{align}
+%
+
+\begin{figure}[!ht]
+\includegraphics[width=\columnwidth]{./line/figs/line_pt_dist.eps}
+\caption{}
+\label{fig:line_pt_dist}
+\end{figure}
+%
+\begin{align}
+\vec{n} = \myvec{1\\\tan 15\degree}
+\end{align}
+%
+$\because \vec{A} = \vec{0}$, 
+\begin{align}
+4 = \frac{\abs{ c}}{\norm{\vec{n}}} \implies c &= \pm 4\sqrt{1+\tan^2 15\degree} 
+\\
+&= \pm 4 \sec 15\degree
+\end{align}
+%
+where 
+%
+\begin{align}
+\sec \theta = \frac{1}{\cos \theta}
+\end{align}
+%
+This follows from the fact that
+%
+\begin{align}
+\cos^2 \theta + \sin^2 \theta &= 1
+\\
+\implies 1 + \frac{\sin^2 \theta}{\cos^2 \theta} &= \frac{1}{\cos^2 \theta}
+\end{align}
+%
+It is easy to verify that 
+%
+\begin{align}
+\frac{\sin \theta}{\cos \theta} &= \tan \theta
+\\
+\implies 1 + \tan^2 \theta &= \sec^2 \theta
+\end{align}
+%
+
+Thus, the equation of the line is 
+\begin{align}
+\myvec{1 &\tan 15\degree} \vec{c} = \pm 4 \sec 15\degree
+\end{align}
+\item The Farenheit temperature $F$ and absolute temperature $K$ satisfy a linear equation.  Given $K=273$ when $F=32$ and that $K=373$  when $F=212$, express $K$ in terms of $F$ and find the value of $F$, when $K=0$.
+%
+\\
+\solution Let 
+\begin{align}
+\vec{x}=\myvec{F & K} 
+\end{align}
+%
+Since the relation between $F, K$ is linear, \myvec{273\\32}, \myvec{373\\21} are on a line.  The corresponding equation is obtained from \eqref{eq:line_norm_vec} and \eqref{eq:line_norm_dir} as 
+%
+\begin{align}
+\myvec{11 & -100}\vec{x} &= \myvec{11 & -100}\myvec{273\\32} 
+\\
+\implies \myvec{11 & -100}\vec{x} &= -197
+\end{align}
+%
+If \myvec{F\\0} is a point on the line, 
+%
+\begin{align}
+\myvec{11 & -100}\myvec{F\\0} &= -197
+\implies F = -\frac{197}{11}
+\end{align}
+%
+\item Equation of a line is 
+\begin{align}
+\myvec{3 & – 4}\vec{x} + 10 = 0. 
+\end{align}
+Find its 
+\begin{enumerate}
+\item  slope, 
+\item  x - and y-intercepts.
+\end{enumerate}
+%
+\solution From the given information, 
+%
+\begin{align}
+\vec{n} &= \myvec{3 \\ – 4}, 
+\\
+\vec{m} &= \myvec{4 \\ 3}, 
+\end{align}
+%
+\begin{enumerate}
+\item $m = \frac{3}{4}$
+\item x-intercept is $-\frac{10}{3}$ and y-intercept is $\frac{10}{4} = \frac{5}{2}$.
+\end{enumerate}
+%
+%
+\item Find the equation of a line perpendicular to the line 
+\begin{align}
+\myvec{1 & – 2}\vec{x}  = 3
+\end{align}
+%
+and passes through the point \myvec{1\\-2}.
+%
+\\
+\solution The normal vector of the perpendicular line is 
+%
+\begin{align}
+\myvec{2 \\ 1}
+\end{align}
+%
+Thus, the desired equation of the line is 
+%
+\begin{align}
+\myvec{2 & 1}\brak{\vec{x} - \myvec{1\\-2}} &=0
+\\
+\implies \myvec{2 & 1}\vec{x} =0
+\end{align}
+%
+\item Find the equation of a line which passes through the point \myvec{1\\2\\3} and is parallel to the vector \myvec{3\\2\\-2}.
+\\
+\solution
+\input{./solutions/line_plane/67/solution.tex}
+\item Find the equaion off the line that passes through \myvec{2\\-1\\4} and is in the direction \myvec{1\\2\\-1}.
+\\
+\solution
+\input{./solutions/line_plane/68/solution.tex}
+\item Find the equation of the line given by 
+\begin{align}
+\frac{x-5}{3} = \frac{y+4}{7} = \frac{z-6}{2}. 
+\end{align}
+\\
+\solution
+\input{./solutions/line_plane/70/solution.tex}
+\item Find the equation of the line passing through the origin and the point \myvec{5\\-2\\3}.
+\\
+\solution
+\input{./solutions/line_plane/71/solution.tex}
+\item Find the equation of the line passing through the points \myvec{3\\-2\\-5}, \myvec{3\\-2\\6}.\\
+\solution
+\input{./solutions/line_plane/72/solution.tex}
+\item Find the vector equation of the line passing through the point \myvec{1\\2\\-4} and perpendicular to the two lines
+\begin{align}
+\frac{x-8}{3} = \frac{y+19}{-16} &= \frac{z-10}{7}, 
+\\
+\frac{x-15}{3} = \frac{y-29}{8} &= \frac{z-5}{-5} 
+\end{align}
+%
+\\
+\solution
+\input{./solutions/line_plane/109/solution.tex}
+%\end{enumerate}
+\item If $\vec{O}$ be the origin and the coordinates of $\vec{P}$ be \myvec{1\\2\\3}, then find the equation of the plane passing through $\vec{P}$ and perpendicular to $OP$.
+%
+\\
+\solution
+\input{solutions/su2021/2/55/ASSIGNMENT5.tex}
+\item Find the equation of the planes
+\begin{enumerate}
+\item that passes through the point \myvec{1\\0\\-2} and the normal to the plane is \myvec{1\\1\\-1}.
+\\
+\solution
+\input{solutions/su2021/2/35/1/Assignment-4.tex}
+\item that passes through the point \myvec{1\\4\\6} and the normal vector the plane is \myvec{1\\-2\\1}.
+\solution
+\input{solutions/su2021/2/35/b/Assignment 4/main.tex}
+
+\end{enumerate}
+\item Find the equation of the plane through the intersection of the planes 
+$
+\myvec{3 & -1 & 2}\vec{x}=4
+$
+ and 
+$
+\myvec{1 & 1 & 1}\vec{x}=-2
+$
+and the pont \myvec{2\\2\\1}.
+%
+\\
+\solution
+\input{solutions/su2021/2/39/main.tex}
+\item Find the equation of the line passing through \myvec{-3\\5} and perpendicular to the line through the points \myvec{2\\5} and \myvec{-3\\6}.
+%
+\solution
+\input{solutions/su2021/2/15/main.tex}
+\end{enumerate}
+\section{Properties}
+\renewcommand{\theequation}{\theenumi}
+%\begin{enumerate}[label=\arabic*.,ref=\theenumi]
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\item Find the coordinates of the foot of the perpendicular drawn from the origin to the plane 
+\begin{align}
+\label{eq:line_foot_perp}
+\myvec{2 & -3 & 4}\vec{x}-6  = 0
+\end{align}
+%
+\solution The normal vector is 
+%
+\begin{align}
+\vec{n}=\myvec{2 \\ -3 \\ 4}
+\end{align}
+%
+Hence, the foot of the perpendicular from the origin is $\lambda \vec{n}$.  Substituting in \eqref{eq:line_foot_perp},
+\begin{align}
+\lambda \norm{\vec{n}}^2 = 6  \implies \lambda = \frac{6}{\norm{\vec{n}}^2} = \frac{6}{29}
+\end{align}
+%
+Thus, the foot of the perpendicular is
+%
+\begin{align}
+\frac{6}{29}\myvec{2 \\ -3 \\ 4}
+\end{align}
+%
+\item Find the coordinates of the point where the line through the points
+$
+\vec{A}=\myvec{3\\4\\1}, 
+\vec{B}=\myvec{5\\1\\6}
+$
+crosses the XY plane.
+%
+\\
+\solution The equation of the line is 
+%
+\begin{align}
+\vec{x} &= \vec{A}+\lambda\brak{\vec{B}-\vec{A}}
+\\
+&= \myvec{3\\4\\1} + \lambda \myvec{2\\-3\\5}
+\end{align}
+%
+The line  crosses the XY plane for $x_3 = 0 \implies \lambda = -\frac{1}{5}$. Thus, the desired point is
+%
+\begin{align}
+ \myvec{3\\4\\1} -\frac{1}{5}\myvec{2\\-3\\5} = \frac{1}{5}\myvec{13\\23\\0}
+\end{align}
+%
+\item The line through the points $\myvec{h\\3}$ and \myvec{4\\1} intersects the line 
+\begin{align}
+\myvec{7 & -9}\vec{x} = 19
+\end{align}
+at right angle.  Find the value of $h$.
+\\
+\solution
+\input{./solutions/line_plane/39/solution.tex}
+\item Find the coordinates of the foot of the perpendicular from the point \myvec{-1\\3} to the line
+%
+\begin{align}
+\myvec{3 & -4}\vec{x} = 16.
+\end{align}
+%
+\\
+\solution
+\input{./solutions/line_plane/42/solution.tex}
+\item The perpendicular from the origin to the line
+\begin{align}
+\myvec{-m & 1}\vec{x} = c
+\end{align}
+%
+meets it at the point \myvec{-1\\2}.  Find the values of $m$ and $c$.
+\\
+\solution
+\input{./solutions/line_plane/43/solution.tex}
+%
+
+\item In what ratio is the line joining \myvec{-1\\1} and \myvec{5\\7} divided by the line
+%
+\begin{align}
+\myvec{1 & 1}\vec{x} &= 4
+\end{align}
+%
+\\
+\solution
+\input{./solutions/line_plane/51/solution.tex}
+\item Find the direction in which a straight line must be drawn through the point \myvec{-1\\2} so that its point of intersection with the line 
+%
+\begin{align}
+\myvec{1 & 1}\vec{x} &= 4
+\end{align}
+%
+may be at a distance of 3 units from this point.
+\\
+\solution
+\input{./solutions/line_plane/53/solution.tex}
+
+\item Show that the path of a moving point such that its distances from two lines
+%
+\begin{align}
+\myvec{3 & -2}\vec{x}  &= 5
+\\
+\myvec{3 & 2}\vec{x}  &= 5
+\end{align}
+%
+are  equal is a straight line.
+%
+\\
+\solution Using \eqref{eq:line_pt_dist} the point $\vec{x}$ satisfies
+%
+\begin{align}
+\frac{\abs{\myvec{3 & -2}\vec{x}  - 5}}{\norm{\myvec{3 \\ -2}}}
+&=\
+\frac{\abs{\myvec{3 & 2}\vec{x}  - 5}}{\norm{\myvec{3 \\ 2}}}
+\\
+\implies \abs{\myvec{3 & -2}\vec{x}  - 5}&=\abs{\myvec{3 & 2}\vec{x}  - 5}
+\end{align}
+%
+resulting in 
+%
+\begin{align}
+\myvec{3 & -2}\vec{x}  - 5=\pm\brak{\myvec{3 & 2}\vec{x}  - 5}
+\end{align}
+%
+leading to the possible lines
+%
+\begin{align}
+L_1: \quad \myvec{0 & 1}\vec{x}  &=0
+\\
+L_2: \quad \myvec{1 & 0}\vec{x}  &=  \frac{5}{3}
+\end{align}
+%
+\item Find the coordinates of the point where the line through \myvec{3\\-4\\-5} and \myvec{2\\-3\\1} crosses the plane 
+\begin{align}
+\myvec{2 & 1 & 1}\vec{x}&=7
+\end{align}
+%
+\solution
+\input{./solutions/line_plane/99/solution.tex}
+\end{enumerate}
+\section{Least Squares}
+\renewcommand{\theequation}{\theenumi}
+%\begin{enumerate}[label=\arabic*.,ref=\theenumi]
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\item Find the shortest distance between the lines 
+\begin{align}
+L_1: \quad \vec{x} &= \myvec{1-t\\t-2\\3-2t} 
+\\
+L_2: \quad \vec{x} &= \myvec{s+1\\2s-1\\-2s-1}
+\end{align}
+\solution
+\input{./solutions/line_plane/80/solution.tex}
+\item Find the shortest distance between the lines 
+\begin{align}
+L_1: \quad \vec{x} &= \myvec{1\\2\\1} + \lambda_1\myvec{1 \\ -1 \\1}
+\\
+L_2: \quad \vec{x} &= \myvec{2\\-1\\-1} + \lambda_2\myvec{2 \\ 1 \\2}
+\end{align}
+\solution
+\input{solutions/su2021/2/32/main.tex}
+\end{enumerate}
+\section{Reflection}
+\renewcommand{\theequation}{\theenumi}
+%\begin{enumerate}[label=\arabic*.,ref=\theenumi]
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\item Assuming that straight lines work as a plane mirror for a point, find the image of the point \myvec{1\\2} in the line 
+%
+\begin{align}
+\myvec{1 & -3}\vec{x}  = -4.
+\end{align}
+%
+%\item Find $\vec{R}$, the {\em reflection}  of $\vec{P}$ about the line
+%\begin{align}
+%L: \quad \vec{n}^T\vec{x} = c
+%\end{align}
+%
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{./line/figs/reflection.eps}
+\caption{}
+\label{fig:line_reflection}
+\end{figure}
+\solution Since $\vec{R}$ is the reflection of $\vec{P}$ and $\vec{Q}$ lies on $L$, $\vec{Q}$ bisects $PR$.  
+This leads to the following equations
+\begin{align}
+\label{eq:reflect_bisect}
+2\vec{Q} &= \vec{P}+\vec{R}
+\\
+\label{eq:reflect_Q}
+\vec{n}^{T}\vec{Q} &= c
+\\
+\label{eq:reflect_R}
+\vec{m}^{T}\vec{R} &= \vec{m}^{T}\vec{P}
+\end{align}
+%
+where $\vec{m}$ is the direction vector of $L$.  From \eqref{eq:reflect_bisect} and \eqref{eq:reflect_Q},
+\begin{align}
+\label{eq:reflect_bisectQ}
+\vec{n}^{T}\vec{R}  &= 2c - \vec{n}^{T}\vec{P}
+\end{align}
+%
+From \eqref{eq:reflect_bisectQ} and \eqref{eq:reflect_R},
+\begin{align}
+\label{eq:reflect_bisectQR}
+\myvec{\vec{m} & \vec{n}}^T\vec{R} &= \myvec{\vec{m} & -\vec{n}}^T\vec{P}+ \myvec{0 \\ 2c}
+\end{align}
+%
+Letting 
+\begin{align}
+\label{eq:reflect_mat}
+\vec{V}=  \myvec{\vec{m} & \vec{n}}
+\end{align}
+with the condition that $\vec{m},\vec{n}$ are orthonormal, i.e.
+\begin{align}
+\label{eq:reflect_ortho}
+\vec{V}^T\vec{V}=  \vec{I}
+\end{align}
+%
+Noting that 
+\begin{align}
+\label{eq:reflect_trans}
+\myvec{\vec{m} & -\vec{n}} &= \myvec{\vec{m} & \vec{n}} \myvec{1 & 0 \\ 0 & -1},
+\end{align}
+\eqref{eq:reflect_bisectQR} can be expressed as
+%
+\begin{align}
+\label{eq:reflect_}
+\vec{V}^T\vec{R} &=  \sbrak{\vec{V}\myvec{1 & 0 \\ 0 & -1}}^T\vec{P}+\myvec{0 \\ 2c}
+\\
+\implies \vec{R} &= \sbrak{\vec{V}\myvec{1 & 0 \\ 0 & -1}\vec{V}^{-1}}^T\vec{P}+ \vec{V}\myvec{0 \\ 2c}
+\\
+ &=\vec{V}\myvec{1 & 0 \\ 0 & -1}\vec{V}^T \vec{P}+2c \vec{n}
+\end{align}
+It can be verified that 
+%\item Show that, for any $\vec{m},\vec{n}$, 
+the reflection is also given by
+\begin{align}
+%\label{eq:reflect_bisect}
+\frac{\vec{R}}{2} = \frac{\vec{m}\vec{m}^T-\vec{n}\vec{n}^T}{\vec{m}^T\vec{m}+\vec{n}^T\vec{n}}\vec{P} + c 
+\frac{\vec{n}}{\norm{\vec{n}}^2}
+\end{align}
+%\solution The reflection of a point $\vec{P}$ about a line 
+%%
+%\begin{align}
+%\vec{n}^T\vec{x}  = c
+%\end{align}
+%%
+%is given by $\vec{R}$, where
+%\begin{align}
+%\label{eq:line_reflect}
+%\frac{\vec{R}}{2} = \frac{\vec{m}\vec{m}^T-\vec{n}\vec{n}^T}{\vec{m}^T\vec{m}+\vec{n}^T\vec{n}}\vec{P} + c \frac{\vec{n}}{\norm{\vec{n}}^2}
+%\end{align}
+%
+The following code plots Fig. \ref{fig:line_reflect} while computing the reflection
+%
+\begin{lstlisting}
+codes/line/line_reflect.py
+\end{lstlisting}
+%
+\begin{figure}[!ht]
+\includegraphics[width=\columnwidth]{./line/figs/line_reflect.eps}
+\caption{}
+\label{fig:line_reflect}
+\end{figure}
+%
+
+\item Find the image of the point \myvec{3\\8} with respect to the line 
+%
+\begin{align}
+\myvec{1 & 3}\vec{x} &= 7
+\end{align}
+%
+assuming the line to be a plane mirror.
+%
+\\
+\solution
+\input{./solutions/line_plane/55/solution.tex}
+\item A ray of light passing through the point \myvec{1\\2} reflects on the x-axis at point $\vec{A}$ and the reflected ray passes through the point \myvec{5\\3}.  Find the coordinates of $\vec{A}$.
+\\
+\solution
+\input{./solutions/line_plane/59/solution.tex}
+\end{enumerate}
+\end{document}
+
+
