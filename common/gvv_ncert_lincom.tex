@@ -4,13 +4,13 @@
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
 %
 % \usepackage{setspace}
-% \usepackage{gensymb}
+ \usepackage{gensymb}
 %\doublespacing
 %\singlespacing
 %\usepackage{silence}
 %Disable all warnings issued by latex starting with "You have..."
 %\usepackage{graphicx}
-%\usepackage{amssymb}
+\usepackage{amssymb}
 %\usepackage{relsize}
 \usepackage[cmex10]{amsmath}
 %\usepackage{amsthm}
@@ -25,7 +25,7 @@
 % \usepackage{txfonts}
 % \usepackage{stfloats}
 % \usepackage{steinmetz}
-% \usepackage{bm}
+ \usepackage{bm}
 % \usepackage{cite}
 % \usepackage{cases}
 % \usepackage{subfig}
@@ -54,7 +54,7 @@
     \usepackage{ifthen}                                           %%
   %optionally (for landscape tables embedded in another document): %%
     \usepackage{lscape}     
-% \usepackage{multicol}
+ \usepackage{multicol}
 % \usepackage{chngcntr}
 %\usepackage{enumerate}
 
@@ -166,10 +166,7 @@ columns=fullflexible
 \vspace{3cm}
 
 \title{
-	%\logo{
-%Computational Approach to School Geometry
-Points and Vectors
-%	}
+	Lines and Planes
 }
 \author{ G V V Sharma$^{*}$% <-this % stops a space
 	\thanks{*The author is with the Department
@@ -285,7 +282,7 @@ Points and Vectors
 %\IEEEpeerreviewmaketitle
 
 \begin{abstract}
-This book provides a computational approach to school geometry based on the NCERT textbooks from Class 6-12.  Links to sample Python codes are available in the text.  
+This manual provides an application of matrix algebra in coordinate geometry, based on the NCERT textbooks from Class 6-12.  
 \end{abstract}
 
 \section{Distance}
@@ -293,6 +290,113 @@ This book provides a computational approach to school geometry based on the NCER
 %\begin{enumerate}[label=\arabic*.,ref=\theenumi]
 \begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
 \numberwithin{equation}{enumi}
+\item Find the shortest distance between the lines 
+\begin{align}
+\frac{x+1}{7} = \frac{y+1}{-6} &= \frac{z+1}{1}, 
+\\
+\frac{x-3}{1} = \frac{y-5}{-2} &= \frac{z-7}{1} 
+\end{align}
+%
+\solution 
+\begin{enumerate}
+\item %\input{solutions/sep/2/22/Assignment4.tex}
+\end{enumerate}
+\item Find the shortest distance between the lines 
+\begin{align}
+L_1: \quad \vec{x} &= \myvec{1\\2\\3} + \lambda_1\myvec{1 \\ -3 \\2}
+\\
+L_2: \quad \vec{x} &= \myvec{4\\5\\6} + \lambda_2\myvec{2 \\ 3 \\1}
+\end{align}
+%
+\solution 
+%\input{solutions/sep/2/23/LINEAR_FORMS_ASSIGNMENT4.tex}
+
+\item In the following cases, find the distance of each of the given points from the corresponding plane.
+%\newcounter{rowno}
+%\setcounter{rowno}{0}
+\begin{table}[!h]
+\centering
+%\begin{tabular}{>{\stepcounter{rowno}\therowno.}cl}
+%\multicolumn{1}{r}{No.} & text & abcd\\\hline
+% & first  \\
+% & second \\
+% & third  \\
+% & fourth 
+%\end{tabular}
+%\input{./line/tables/3d_ncert.tex}
+\caption{}
+\label{table:3d}
+\end{table}
+\item Find the shortest distance between the lines 
+%
+\begin{align}
+\vec{x} = \myvec{6 \\ 2 \\ 2} + \lambda_1 \myvec{1 \\ -2 \\ 2}  \text{ and }
+\\
+\vec{x} = \myvec{-4 \\ 0 \\ -1} + \lambda_2 \myvec{3 \\ -2 \\ -2}  
+\end{align}
+%
+\solution
+%\input{solutions/sep/2/35/Assignment_4.tex} 
+
+\item If the points \myvec{1\\1\\p} and \myvec{-3\\0\\1} be equidistant from the plane 
+\begin{align}
+\myvec{3 & 4 & -12}\vec{x}&=-13,
+\end{align}
+%
+then find the value of $p$.
+\item  For the following planes, find the coordinates of the foot of the perpendicular drawn from the origin
+\begin{enumerate}[itemsep=2pt]
+\begin{multicols}{2}
+\item
+$
+\myvec{2 & 3 & 4}\vec{x}=12
+$
+\item
+$
+\myvec{3 & 4 & -6}\vec{x}=0
+$
+\item
+$
+\myvec{1 & 1 & 1}\vec{x}=1
+$
+\item
+$
+\myvec{0 & 5 &0}\vec{x}=-8
+$
+\end{multicols}
+\end{enumerate}
+
+\item Find the distance between $\vec{P}= \myvec{x_1  \\ y_1}$ and $\vec{Q} =\myvec{x_2 \\ y_2}$ when
+\begin{enumerate}
+\item PQ is parallel to the y-axis.
+\item PQ is parallel to the x-axis.
+\end{enumerate}
+\item Find the distance between the parallel lines
+%
+\begin{align}
+l\myvec{1 & 1}\vec{x} = -p
+\\
+l\myvec{1 & 1}\vec{x} = r
+\end{align}
+%
+\item Find the perpendicular distance from the origin to the line joining the points \myvec{\cos\theta \\ \sin  \theta} and \myvec{\cos\phi \\ \sin \phi}.
+\item Prove that the product of the lengths of the perpendiculars drawn from the points $\myvec{\sqrt{a^2-b^2}0}$ and $\myvec{\sqrt{a^2-b^2}0}$ to the line 
+%
+\begin{align}
+\myvec{\frac{\cos\theta}{a} & \frac{\sin\theta}{b}}\vec{x} &= 1
+\end{align}
+%
+is $b^2$.
+
+
+\item Show that the lines 
+\begin{align}
+\frac{x-a+d}{\alpha-\delta} = \frac{y-a}{\alpha} &= \frac{z-a-d}{\alpha+\delta}, 
+\\
+\frac{x-b+c}{\beta-\gamma} = \frac{y-b}{\beta} &= \frac{z-b-c}{\beta+\gamma} 
+\end{align}
+%
+are coplanar.
 \item Find the 
 distance between the lines 
 \begin{align}
@@ -310,21 +414,21 @@ codes/line/line_dist_parallel.py
 \end{lstlisting}
 Fig. \ref{fig:line_dist_parallel_py} 
 %
-\begin{figure}[!ht]
-\includegraphics[width=\columnwidth]{./line/figs/line_dist_parallel_py.eps}
-\caption{}
-\label{fig:line_dist_parallel_py}
-\end{figure}
+%\begin{figure}[!ht]
+%\includegraphics[width=\columnwidth]{./line/figs/line_dist_parallel_py.eps}
+%\caption{}
+%\label{fig:line_dist_parallel_py}
+%\end{figure}
 %
 %
 From Fig. \ref{fig:line_dist_parallel}, the distance is
 %
-\begin{figure}
-\centering
-\includegraphics[width=\columnwidth]{./line/figs/line_dist_parallel.eps}
-\caption{}
-\label{fig:line_dist_parallel}
-\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[width=\columnwidth]{./line/figs/line_dist_parallel.eps}
+%\caption{}
+%\label{fig:line_dist_parallel}
+%\end{figure}
 %
 \begin{align}
 \label{eq:line_dist_parallel}
@@ -421,11 +525,11 @@ Fig. \ref{fig:line_dist_skew}
 codes/line/line_dist_skew.py
 \end{lstlisting}
 %
-\begin{figure}[!ht]
-\includegraphics[width=\columnwidth]{./line/figs/line_dist_skew.eps}
-\caption{}
-\label{fig:line_dist_skew}
-\end{figure}
+%\begin{figure}[!ht]
+%\includegraphics[width=\columnwidth]{./line/figs/line_dist_skew.eps}
+%\caption{}
+%\label{fig:line_dist_skew}
+%\end{figure}
 %
 
 The normal to both the lines (and corresponding planes) is 
@@ -547,7 +651,7 @@ which completes the proof.  Alternatively, the lines are coplanar if
 \item Find the distance of the point \myvec{1\\-1} from the line $\myvec{12 & -5}\vec{x} = -82$.
 \\
 \solution
-\input{./solutions/line_plane/33/solution.tex}
+%\input{./solutions/line_plane/33/solution.tex}
 \item Find the points on the x-axis, whose distances from the line 
 \begin{align}
 \myvec{4 & 3} \vec{x} = 12
@@ -556,7 +660,7 @@ are 4 units.
 %
 \\
 \solution
-\input{./solutions/line_plane/34/solution.tex}
+%\input{./solutions/line_plane/34/solution.tex}
 \item What are the points on the y-axis whose distance from the line 
 %
 \begin{align}
@@ -566,7 +670,7 @@ are 4 units.
 4 units.
 \\
 \solution
-\input{./solutions/line_plane/46/solution.tex}
+%\input{./solutions/line_plane/46/solution.tex}
 \item Find the distance of the line
 \begin{align}
 \label{eq:line_L_1}
@@ -624,7 +728,7 @@ substituting $\abs{\lambda}$ in \eqref{eq:line_L_2_P_dist} gives the desired ans
 \end{align}
 %
 \solution
-\input{solutions/su2021/2/18.tex}
+%\input{solutions/su2021/2/18.tex}
 \item Find the distance of the point \myvec{-1\\-5\\-10} from the point of intersection of the line
 %
 \begin{align}
@@ -639,7 +743,7 @@ and the plane
 %
 \\
 \solution
-\input{./solutions/line_plane/107/solution.tex}
+%\input{./solutions/line_plane/107/solution.tex}
 \item A person standing at the junction of two straight paths represented by the equations 
 %
 \begin{align}
@@ -657,7 +761,7 @@ wants to reach the path whose equation is
 in the least time.  Find the equation of the path that he should follow.
 \\
 \solution
-\input{./solutions/line_plane/60/solution.tex}
+%\input{./solutions/line_plane/60/solution.tex}
 \item In each of the following cases, determine the normal to the plane and the distance from the origin.
 \begin{enumerate}[itemsep=2pt]
 \begin{multicols}{2}
@@ -680,7 +784,7 @@ $
 \end{multicols}
 \end{enumerate}
 \solution
-\input{./solutions/line_plane/81/solution.tex}
+%\input{./solutions/line_plane/81/solution.tex}
 \item Distance between the two planes
 %
 \begin{align}
@@ -690,7 +794,7 @@ $
 \end{align}
 %
 \solution
-\input{./solutions/line_plane/110/solution.tex}
+%\input{./solutions/line_plane/110/solution.tex}
 \begin{enumerate}[itemsep=2pt]
 \begin{multicols}{2}
 \item 2
@@ -713,7 +817,7 @@ from the point \myvec{1\\2} along the line
 %
 \\
 \solution
-\input{./solutions/line_plane/52/solution.tex}
+%\input{./solutions/line_plane/52/solution.tex}
 
 \end{enumerate}
 \section{Line Equation}
@@ -721,6 +825,207 @@ from the point \myvec{1\\2} along the line
 %\begin{enumerate}[label=\arabic*.,ref=\theenumi]
 \begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
 \numberwithin{equation}{enumi}
+\item Write the equations for the x and y axes.
+\item Find the equation of the line satisfying the following conditions 
+\begin{enumerate}
+\item passing through  the point \myvec{-4\\3} with slope $\frac{1}{2}$.
+\item passing through the point \myvec{0\\0} with slope $m$.
+\item passing through the point $\myvec{2\\2\sqrt{3}}$ and inclined with the x-axis at an angle of 75$\degree$.
+\item Intersecting the x-axis at a distance of 3 units to the let of the origin with slope -2.
+\item intersecting the y-axis at a distance of 2 units above the origin and making an angle of $30\degree$ with the positive direction of the x-axis.
+\item passing through the points \myvec{-1\\1} and \myvec{2\\-4}.
+\item perpendicular distance from the origin is 5 and the angle made by the perpendicular with the positive x-axis is 30$\degree$.
+\end{enumerate}
+%
+\solution
+\begin{enumerate}
+\item %\input{solutions/su2021/2/14/Assignment-2.tex}
+\item %\input{solutions/su2021/2/14/de/main.tex}
+\end{enumerate}
+\item Find the equation of the line parallel to the line 
+\begin{align}
+\myvec{3 & -4}\vec{x} = -2
+\end{align}
+%
+and passing through the point \myvec{-2\\3}.
+%
+\item The hypotenuse of a right angled triangle has its ends at the points \myvec{1\\3} and \myvec{-4\\1}. Find an equation of the legs of the triangle.
+
+\item Find the equation of the line which is equidistant from parallel lines
+%
+\begin{align}
+\myvec{9 & 7}\vec{x} &= 7
+\\
+\myvec{3 & 2}\vec{x} &= -6.
+\end{align}
+%
+\solution
+%\input{solutions/aug/2/15/main.tex}
+\item A line perpendicular to the line segment joining the points \myvec{1\\0} and \myvec{2\\3} divides it in the ratio $1:n$.  Find the equation of the line.
+\\
+\solution
+%\input{solutions/aug/2/17/Assignment4.tex}
+
+\item Find the equation of a line that cuts off equal intercepts on the coordinate axes and passes through the point \myvec{2\\3}.
+\\
+\solution
+%\input{solutions/aug/2/18/Assignment_4.tex}
+\item Find the equation of the line passing through the point \myvec{2\\2} and cutting off intercepts on the axes whose sum is 9.
+\item Find the equation of the line through the point \myvec{0\\2} making an angle $\frac{2\pi}{3}$ with the positive x-axis.  Also, find the equation of the line parallel to it and crossing the y-axis at a distance of 2 units below the origin.
+\\
+\solution
+%\input{solutions/aug/2/20/Assignment4.tex}
+%
+\item The perpendicular from the origin to a line meets it at a point \myvec{-2\\9}, find the equation of the line.
+\\
+\solution
+%\input{solutions/aug/2/21/Assignment_4.tex}
+
+%\end{enumerate}
+%
+\item Find the equation of the planes that passes through three points
+\begin{enumerate}
+\item \myvec{1\\1\\-1}, \myvec{6\\4\\-5}, \myvec{-4\\-2\\3}
+\item \myvec{1\\1\\0}, \myvec{1\\2\\1}, \myvec{-2\\2\\-1}.
+\end{enumerate}
+\solution
+\begin{enumerate}
+    \item 
+%\input{solutions/su2021/2/36/a/main-3.tex}
+\end{enumerate}
+\item Find the equaion of the plane with intercept 3 on the y-axis and parallel to ZOX plane.
+\\
+\solution
+%\input{solutions/aug/2/26/main.tex}
+\item Find the equation of the plane passing through the intersection of the planes 
+$
+\myvec{2 & 2 & -3}\vec{x}=7
+$
+ and 
+$
+\myvec{2 & 5 & 3}\vec{x}=9
+$
+and the pont \myvec{2\\1\\3}.
+%
+\\
+\solution
+%\input{solutions/sep/2/27/EE3900_Assignment_4.tex}
+\item  Find the equation of the plane through the intersection of the planes
+$
+\myvec{1 & 1 & 1}\vec{x}=1
+$
+ and 
+$
+\myvec{2 & 3 & 4}\vec{x}=5
+$
+which is perpendicular to the plane 
+$
+\myvec{1 & -1 & 1}\vec{x}=0.
+$
+%
+\\
+\solution
+%\input{solutions/sep/2/28/Assignment-4.tex}
+
+%
+\item Find the  equation of the line passing through \myvec{1\\2\\3} and perpendicular to the plane %
+\begin{align}
+\myvec{1 & 2 & -5}\vec{x}&=-9
+\end{align}
+\solution
+%\input{solutions/aug/2/34/Assignment4.tex}
+\item Find the equation of the plane passing through the point \myvec{-1\\3\\2} and perpendicular to each of the planes 
+\begin{align}
+\myvec{1 & 2 & 3}\vec{x}&=5
+\\
+\myvec{3 & 3 & 1}\vec{x}&=0
+\end{align}
+\item Find the equation of the plane passing through the line of intersection of the planes 
+\begin{align}
+\myvec{1 & 1 & 1}\vec{x}&=1 \text{ and }
+\\
+\myvec{2 & 3 & -1}\vec{x}&=-4
+\end{align}
+%
+and parallel to the x-axis.
+%
+\\
+\solution
+%\input{solutions/sep/2/40/main.tex}
+\item Find the equation of the plane which contains the line of intersection of the planes 
+%
+\begin{align}
+\myvec{1 & 2 & 3}\vec{x}&=4 
+\\
+\myvec{2 & 1 & -1}\vec{x}&=-5
+\end{align}
+%
+and which is perpendicular to the plane 
+\begin{align}
+\myvec{5 & 3 & -6}\vec{x}&=-8
+\end{align}
+%
+\item Find the vector equation of the line passing through \myvec{1\\2\\3} and parallel to the planes 
+%
+\begin{align}
+\myvec{1 & -1 & 2}\vec{x}&=5
+\\
+\myvec{3 & 1 & 1}\vec{x}&=6
+\end{align}
+%
+\solution
+%%\input{solutions/su2021/2/57.tex}
+
+\item The planes 
+%
+\begin{align}
+\myvec{2 & -1 & 4}\vec{x}&=5
+\\
+\myvec{5 & -\frac{5}{2} & 10}\vec{x}&=6
+\end{align}
+%
+are 
+%
+\begin{enumerate}[itemsep=2pt]
+\begin{multicols}{2}
+\item Perpendicular
+\item Parallel
+\item intersect y-axis
+\item passes through $\myvec{0\\0\\\frac{5}{4}}$
+\end{multicols}
+\end{enumerate}
+%
+\item Find the equation of the line which passes through  the point \myvec{-2\\4\\-5} and parallel to the line given by 
+\begin{align}
+\frac{x+3}{3} = \frac{y-4}{5} = \frac{z+8}{6}. 
+\end{align}
+\item Find the equation of a plane which is at a distance of 7 units from the origin and normal to \myvec{3\\5\\-6}.
+%
+\item $\vec{P}=\myvec{a b}$ is the mid-point of a line segment between axes. Show that equation of the line is
+\begin{align}
+\myvec{\frac{1}{a} & \frac{1}{b}}\vec{x} = 2
+\end{align}
+\item  Point $\vec{R}= \myvec{h k}$ divides a line segment between the axes in the ratio 1: 2. Find equation of the line.
+\item Find the equation of the line through the point $\vec{x}_1$ and parallel to the line
+%
+\begin{align}
+\myvec{A & B}\vec{x} = -C
+\end{align}
+%
+\item Find the equation of the line passing through the origin and making an angle $\theta$ with the line %
+\begin{align}
+\myvec{-m & 1}\vec{x} &= c
+\end{align}
+%
+\solution
+%\input{solutions/july/110.tex}
+\item Find the equation of a line parallel to the x-axis and passing through the origin.
+\item Find the equation of a plane passing through \myvec{a & b &c} and parallel to the plane 
+%
+\begin{align}
+\myvec{1 & 1 & 1}\vec{x}{x}&=2
+\end{align}
+%
 \item Find equation of line joining
 \begin{enumerate}
 \item  \myvec{1&2} and \myvec{3&6} 
@@ -728,8 +1033,8 @@ from the point \myvec{1\\2} along the line
 \end{enumerate}
 \solution
 \begin{enumerate}
-    \item %\input{solutions/july/det/76/1/Assignment1.tex}
-    \item %\input{solutions/aug/1/76/2/assignment5.tex}
+    \item %%\input{solutions/july/det/76/1/Assignment1.tex}
+    \item %%\input{solutions/aug/1/76/2/assignment5.tex}
     
 \end{enumerate}
 \item Find the equation of a plane which is at a distance of $\frac{6}{\sqrt{29}}$ from the origin and has  normal vector $\vec{n}=\myvec{2\\-3\\4}$.
@@ -970,22 +1275,22 @@ The equation of the plane is then obtained as
 and having x intercept 3.
 \\
 \solution
-\input{./solutions/line_plane/37/A1/latex/solution.tex}
+%\input{./solutions/line_plane/37/A1/latex/solution.tex}
 
 \item Two lines passing through the point \myvec{2\\3} intersect each other at angle of $60\degree$.  If the slope of one line is 2, find the equation of the other line.
 \\
 \solution
-\input{./solutions/line_plane/40/solution.tex}
+%\input{./solutions/line_plane/40/solution.tex}
 \item Find the equation of the right bisector of the line segment joining the points \myvec{3\\4} and \myvec{-1\\2}.
 \\
 \solution
-\input{./solutions/line_plane/41/solution.tex}
+%\input{./solutions/line_plane/41/solution.tex}
 
 \item Find the equations of the lines, which cut-off intercepts on the axes whose sum and product are 1 and -6 respectively.
 %
 \\
 \solution
-\input{./solutions/line_plane/45/solution.tex}
+%\input{./solutions/line_plane/45/solution.tex}
 %%
 \item Find the equation of the line parallel to the y-axis drawn through the point of intersection of the lines 
 %
@@ -997,7 +1302,7 @@ and having x intercept 3.
 %
 \\
 \solution
-\input{./solutions/line_plane/47/solution.tex}
+%\input{./solutions/line_plane/47/solution.tex}
 %
 \item Find the equation of the lines through the point \myvec{3\\2} which make an angle of $45\degree$ with the line 
 \begin{align}
@@ -1005,7 +1310,7 @@ and having x intercept 3.
 \end{align}
 \\
 \solution
-\input{./solutions/line_plane/49/solution.tex}
+%\input{./solutions/line_plane/49/solution.tex}
 %
 \item Find the equation of the line passing through the point of intersection of the lines 
 %
@@ -1018,7 +1323,7 @@ and having x intercept 3.
 that has equal intercepts on the axes.
 \\
 \solution
-\input{./solutions/line_plane/50/solution.tex}
+%\input{./solutions/line_plane/50/solution.tex}
 \item Two positions of time and distance are recorded as, when $T = 0, D = 2$ and when $T = 3, D = 8$. Using the concept of slope, find law of motion, i.e., how distance depends upon time.
 %
 \\
@@ -1113,11 +1418,11 @@ The following code plots Fig. \ref{fig:line_parallel_axes}
 codes/line/line_parallel_axes.py
 \end{lstlisting}
 %
-\begin{figure}[!ht]
-\includegraphics[width=\columnwidth]{./line/figs/line_parallel_axes.eps}
-\caption{}
-\label{fig:line_parallel_axes}
-\end{figure}
+%\begin{figure}[!ht]
+%\includegraphics[width=\columnwidth]{./line/figs/line_parallel_axes.eps}
+%\caption{}
+%\label{fig:line_parallel_axes}
+%\end{figure}
 
 \item Find the equation of the line through $\vec{A}=\myvec{– 2\\ 3}$ with slope –4.
 \\
@@ -1196,7 +1501,7 @@ find the equation of the line.
 \item Find the equation of the line, which makes intercepts -3 and 2 on the x and y axes respectively.
 \\
 \solution 
-\input{solutions/july/1/23/Assignment2.tex}
+%\input{solutions/july/1/23/Assignment2.tex}
 \item Find the equation of the line whose perpendicular distance from the origin is 4 units and the angle which the normal makes with the positive direction of x-axis is $15\degree$.
 %
 \\
@@ -1232,11 +1537,11 @@ and \eqref{eq:line_pt_dist_lam_norm}
 \end{align}
 %
 
-\begin{figure}[!ht]
-\includegraphics[width=\columnwidth]{./line/figs/line_pt_dist.eps}
-\caption{}
-\label{fig:line_pt_dist}
-\end{figure}
+%\begin{figure}[!ht]
+%\includegraphics[width=\columnwidth]{./line/figs/line_pt_dist.eps}
+%\caption{}
+%\label{fig:line_pt_dist}
+%\end{figure}
 %
 \begin{align}
 \vec{n} = \myvec{1\\\tan 15\degree}
@@ -1348,25 +1653,25 @@ Thus, the desired equation of the line is
 \item Find the equation of a line which passes through the point \myvec{1\\2\\3} and is parallel to the vector \myvec{3\\2\\-2}.
 \\
 \solution
-\input{./solutions/line_plane/67/solution.tex}
+%\input{./solutions/line_plane/67/solution.tex}
 \item Find the equaion off the line that passes through \myvec{2\\-1\\4} and is in the direction \myvec{1\\2\\-1}.
 \\
 \solution
-\input{./solutions/line_plane/68/solution.tex}
+%\input{./solutions/line_plane/68/solution.tex}
 \item Find the equation of the line given by 
 \begin{align}
 \frac{x-5}{3} = \frac{y+4}{7} = \frac{z-6}{2}. 
 \end{align}
 \\
 \solution
-\input{./solutions/line_plane/70/solution.tex}
+%\input{./solutions/line_plane/70/solution.tex}
 \item Find the equation of the line passing through the origin and the point \myvec{5\\-2\\3}.
 \\
 \solution
-\input{./solutions/line_plane/71/solution.tex}
+%\input{./solutions/line_plane/71/solution.tex}
 \item Find the equation of the line passing through the points \myvec{3\\-2\\-5}, \myvec{3\\-2\\6}.\\
 \solution
-\input{./solutions/line_plane/72/solution.tex}
+%\input{./solutions/line_plane/72/solution.tex}
 \item Find the vector equation of the line passing through the point \myvec{1\\2\\-4} and perpendicular to the two lines
 \begin{align}
 \frac{x-8}{3} = \frac{y+19}{-16} &= \frac{z-10}{7}, 
@@ -1376,22 +1681,22 @@ Thus, the desired equation of the line is
 %
 \\
 \solution
-\input{./solutions/line_plane/109/solution.tex}
+%\input{./solutions/line_plane/109/solution.tex}
 %\end{enumerate}
 \item If $\vec{O}$ be the origin and the coordinates of $\vec{P}$ be \myvec{1\\2\\3}, then find the equation of the plane passing through $\vec{P}$ and perpendicular to $OP$.
 %
 \\
 \solution
-\input{solutions/su2021/2/55/ASSIGNMENT5.tex}
+%\input{solutions/su2021/2/55/ASSIGNMENT5.tex}
 \item Find the equation of the planes
 \begin{enumerate}
 \item that passes through the point \myvec{1\\0\\-2} and the normal to the plane is \myvec{1\\1\\-1}.
 \\
 \solution
-\input{solutions/su2021/2/35/1/Assignment-4.tex}
+%\input{solutions/su2021/2/35/1/Assignment-4.tex}
 \item that passes through the point \myvec{1\\4\\6} and the normal vector the plane is \myvec{1\\-2\\1}.
 \solution
-\input{solutions/su2021/2/35/b/Assignment 4/main.tex}
+%\input{solutions/su2021/2/35/b/Assignment 4/main.tex}
 
 \end{enumerate}
 \item Find the equation of the plane through the intersection of the planes 
@@ -1406,17 +1711,42 @@ and the pont \myvec{2\\2\\1}.
 %
 \\
 \solution
-\input{solutions/su2021/2/39/main.tex}
+%\input{solutions/su2021/2/39/main.tex}
 \item Find the equation of the line passing through \myvec{-3\\5} and perpendicular to the line through the points \myvec{2\\5} and \myvec{-3\\6}.
 %
 \solution
-\input{solutions/su2021/2/15/main.tex}
+%\input{solutions/su2021/2/15/main.tex}
 \end{enumerate}
 \section{Properties}
 \renewcommand{\theequation}{\theenumi}
 %\begin{enumerate}[label=\arabic*.,ref=\theenumi]
 \begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
 \numberwithin{equation}{enumi}
+$
+\item Find the coordinates of the point where the line through \myvec{5\\1\\6} and \myvec{3\\4\\1} crosses the YZ-plane.
+\\
+\solution
+%\input{solutions/aug/2/36/Assignment-4.tex}
+
+\item Find the coordinates of the point where the line through \myvec{5\\1\\6} and \myvec{3\\4\\1} crosses the ZX-plane.
+\\
+\solution
+%\input{solutions/aug/2/37/Assignment_4.tex}
+%
+\item Determine the ratio in which the line 
+\begin{align}
+\myvec{2 & 1}\vec{x} - 4 = 0
+\end{align}
+%
+divides the line segment joining the points $\vec{A}=\myvec{2\\-2}, \vec{B}=\myvec{3\\7}$.
+\item Find the ratio in which the line segment joining the points \myvec{4\\8\\10} and \myvec{6\\10\\-8} is divided by the YZ-plane.
+%
+\\
+\solution
+%\input{solutions/aug/2/19/main.tex}
+%\\
+%\solution Use \eqref{eq:line_section_form}.  The YZ-plane has points \myvec{0\\y\\z}.
+%
 \item Find the coordinates of the foot of the perpendicular drawn from the origin to the plane 
 \begin{align}
 \label{eq:line_foot_perp}
@@ -1469,7 +1799,7 @@ The line  crosses the XY plane for $x_3 = 0 \implies \lambda = -\frac{1}{5}$. Th
 at right angle.  Find the value of $h$.
 \\
 \solution
-\input{./solutions/line_plane/39/solution.tex}
+%\input{./solutions/line_plane/39/solution.tex}
 \item Find the coordinates of the foot of the perpendicular from the point \myvec{-1\\3} to the line
 %
 \begin{align}
@@ -1478,7 +1808,7 @@ at right angle.  Find the value of $h$.
 %
 \\
 \solution
-\input{./solutions/line_plane/42/solution.tex}
+%\input{./solutions/line_plane/42/solution.tex}
 \item The perpendicular from the origin to the line
 \begin{align}
 \myvec{-m & 1}\vec{x} = c
@@ -1487,7 +1817,7 @@ at right angle.  Find the value of $h$.
 meets it at the point \myvec{-1\\2}.  Find the values of $m$ and $c$.
 \\
 \solution
-\input{./solutions/line_plane/43/solution.tex}
+%\input{./solutions/line_plane/43/solution.tex}
 %
 
 \item In what ratio is the line joining \myvec{-1\\1} and \myvec{5\\7} divided by the line
@@ -1498,7 +1828,7 @@ meets it at the point \myvec{-1\\2}.  Find the values of $m$ and $c$.
 %
 \\
 \solution
-\input{./solutions/line_plane/51/solution.tex}
+%\input{./solutions/line_plane/51/solution.tex}
 \item Find the direction in which a straight line must be drawn through the point \myvec{-1\\2} so that its point of intersection with the line 
 %
 \begin{align}
@@ -1508,7 +1838,7 @@ meets it at the point \myvec{-1\\2}.  Find the values of $m$ and $c$.
 may be at a distance of 3 units from this point.
 \\
 \solution
-\input{./solutions/line_plane/53/solution.tex}
+%\input{./solutions/line_plane/53/solution.tex}
 
 \item Show that the path of a moving point such that its distances from two lines
 %
@@ -1551,7 +1881,7 @@ L_2: \quad \myvec{1 & 0}\vec{x}  &=  \frac{5}{3}
 \end{align}
 %
 \solution
-\input{./solutions/line_plane/99/solution.tex}
+%\input{./solutions/line_plane/99/solution.tex}
 \end{enumerate}
 \section{Least Squares}
 \renewcommand{\theequation}{\theenumi}
@@ -1565,7 +1895,7 @@ L_1: \quad \vec{x} &= \myvec{1-t\\t-2\\3-2t}
 L_2: \quad \vec{x} &= \myvec{s+1\\2s-1\\-2s-1}
 \end{align}
 \solution
-\input{./solutions/line_plane/80/solution.tex}
+%\input{./solutions/line_plane/80/solution.tex}
 \item Find the shortest distance between the lines 
 \begin{align}
 L_1: \quad \vec{x} &= \myvec{1\\2\\1} + \lambda_1\myvec{1 \\ -1 \\1}
@@ -1573,7 +1903,7 @@ L_1: \quad \vec{x} &= \myvec{1\\2\\1} + \lambda_1\myvec{1 \\ -1 \\1}
 L_2: \quad \vec{x} &= \myvec{2\\-1\\-1} + \lambda_2\myvec{2 \\ 1 \\2}
 \end{align}
 \solution
-\input{solutions/su2021/2/32/main.tex}
+%\input{solutions/su2021/2/32/main.tex}
 \end{enumerate}
 \section{Reflection}
 \renewcommand{\theequation}{\theenumi}
@@ -1591,12 +1921,12 @@ L_2: \quad \vec{x} &= \myvec{2\\-1\\-1} + \lambda_2\myvec{2 \\ 1 \\2}
 %L: \quad \vec{n}^T\vec{x} = c
 %\end{align}
 %
-\begin{figure}
-\centering
-\includegraphics[width=\columnwidth]{./line/figs/reflection.eps}
-\caption{}
-\label{fig:line_reflection}
-\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[width=\columnwidth]{./line/figs/reflection.eps}
+%\caption{}
+%\label{fig:line_reflection}
+%\end{figure}
 \solution Since $\vec{R}$ is the reflection of $\vec{P}$ and $\vec{Q}$ lies on $L$, $\vec{Q}$ bisects $PR$.  
 This leads to the following equations
 \begin{align}
@@ -1674,11 +2004,11 @@ The following code plots Fig. \ref{fig:line_reflect} while computing the reflect
 codes/line/line_reflect.py
 \end{lstlisting}
 %
-\begin{figure}[!ht]
-\includegraphics[width=\columnwidth]{./line/figs/line_reflect.eps}
-\caption{}
-\label{fig:line_reflect}
-\end{figure}
+%\begin{figure}[!ht]
+%\includegraphics[width=\columnwidth]{./line/figs/line_reflect.eps}
+%\caption{}
+%\label{fig:line_reflect}
+%\end{figure}
 %
 
 \item Find the image of the point \myvec{3\\8} with respect to the line 
@@ -1691,11 +2021,110 @@ assuming the line to be a plane mirror.
 %
 \\
 \solution
-\input{./solutions/line_plane/55/solution.tex}
+%\input{./solutions/line_plane/55/solution.tex}
 \item A ray of light passing through the point \myvec{1\\2} reflects on the x-axis at point $\vec{A}$ and the reflected ray passes through the point \myvec{5\\3}.  Find the coordinates of $\vec{A}$.
 \\
 \solution
-\input{./solutions/line_plane/59/solution.tex}
+%\input{./solutions/line_plane/59/solution.tex}
+\end{enumerate}
+\section{Miscellaneous}
+\renewcommand{\theequation}{\theenumi}
+%\begin{enumerate}[label=\arabic*.,ref=\theenumi]
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\item Find $\theta$ and $p$ if 
+%
+\begin{align}
+\myvec{\sqrt{3} & 1}\vec{x} = -2
+\end{align}
+%
+is equivalent to
+%
+\begin{align}
+\myvec{\cos\theta & \sin\theta}\vec{x} = p
+\end{align}
+\item In $\triangle ABC$, Show that the centroid 
+\begin{align}
+\vec{O} = \frac{\vec{A}+\vec{B}+\vec{C}}{3}
+\end{align}
+%
+%\\
+%\solution 
+%%\input{./solutions/3/chapters/median/chapter1.tex}
+
+\item The base of an equilateral triangle with side $2a$ lies along the y-axis such that the mid-point of the base is at the origin. Find vertices of the triangle.
+%\solution 
+%%\input{./solutions/6/chapters/line/miscellaneous/solution.tex}
+\item If three points \myvec{h 0}, \myvec{a b} and \myvec{0 k} lie on a line, show that
+$\frac{a}{h}+\frac{b}{k}= 1$.
+\item Show that two lines 
+\begin{align}
+\myvec{a_1 & b_1}\vec{x} +c_1&= 0
+\\
+\myvec{a_2 & b_2}\vec{x} +c_2&= 0
+\end{align}
+are 
+\begin{enumerate}
+\item parallel if $\frac{a_1}{b_1}=\frac{a_2}{b_2}$ and
+\item perpendicular if $a_1a_2-b_1b_2 = 0$.
+\end{enumerate}
+%
+\item If $p$ and $q$ are the lengths of perpendiculars from the origin to the lines 
+%
+\begin{align}
+\myvec{\cos\theta & \sin\theta}\vec{x} &= k\cos2\theta
+\\
+\myvec{\sec\theta & \cosec\theta}\vec{x} &= k
+\end{align}
+%
+respectively, prove that $p^2+4q^2=k^2$.
+\item If $p$ is the length of the perpendicular from the origin to the line whose intercepts on the axes are $a$ and $b$, then show that 
+%
+\begin{align}
+\frac{1}{p^2} = \frac{1}{a^2}+\frac{1}{b^2}.
+\end{align}
+%
+\item Show that the area of the triangle formed by the lines
+%
+\begin{align}
+\myvec{-m_1 & 1}\vec{x} = c_1
+\\
+\myvec{-m_2 & 1}\vec{x} = c_2
+\\
+\myvec{1 & 0}\vec{x} = 0
+\end{align}
+%
+is $\frac{\brak{c_1-c_2}^2}{2\abs{m_1-m_2}}$.
+
+\item Find the values of $k$ for which the line 
+%
+\begin{align}
+\myvec{k-3 & -\brak{4-k^2}}\vec{x} +k^2-7k+6= 0
+\end{align}
+%
+is
+\begin{enumerate}
+\item parallel to the x-axis
+\item parallel to the y-axis
+\item passing through the origin.
+\end{enumerate}
+%
+\solution
+%\input{solutions/oct/2/106/Assignment_2.tex}
+\item Find the area of the triangle formed by the lines
+%
+\begin{align}
+\myvec{1 & -1}\vec{x} &= 0
+\\
+\myvec{1 & 1}\vec{x} &= 0
+\\
+\myvec{1 & 0}\vec{x} &= k
+\end{align}
+%
+\item Prove that if a plane has the intercepts $a, b, c$ and is at a distance of $p$ units from the origin, then, 
+\begin{align}
+\frac{1}{a^2}+\frac{1}{b^2}+\frac{1}{c^2}=\frac{1}{p^2} 
+\end{align}
 \end{enumerate}
 \end{document}
 
