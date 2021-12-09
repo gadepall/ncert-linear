@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.8.26)  20 NOV 2021 19:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.8.26)  5 DEC 2021 11:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -626,51 +626,48 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout4 = `gvv_linear_defs.toc'.
 
 
-Underfull \hbox (badness 4072) in paragraph at lines 399--400
-[]\OT1/ptm/m/n/12 Now, $\OML/cmm/m/it/12 d []$ \OT1/ptm/m/n/12 is small-est whe
-n the above
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 407--411
-[]\OT1/ptm/m/n/12 The dis-tance be-tween the par-al-lel planes
- []
-
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2
-
 ]
-(./gvv_linear_defs.aux)
+Underfull \hbox (badness 6893) in paragraph at lines 491--497
+\OT1/ptm/m/n/12 yielding [] af-ter sub-sti-tut-ing from
+ []
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
+Underfull \hbox (badness 2913) in paragraph at lines 497--501
+[]\OT1/ptm/m/n/12 The dis-tance be-tween the par-al-lel planes
+ []
+
+[2] [3
+
+] (./gvv_linear_defs.aux)
 Package rerunfilecheck Info: File `gvv_linear_defs.out' has not changed.
 (rerunfilecheck)             Checksum: EC090D9B27D9AE02292151671D73981B;451.
  ) 
 Here is how much of TeX's memory you used:
- 12397 strings out of 478994
- 183363 string characters out of 5864751
- 510753 words of memory out of 5000000
- 29662 multiletter control sequences out of 15000+600000
+ 12463 strings out of 478994
+ 184400 string characters out of 5864751
+ 518863 words of memory out of 5000000
+ 29684 multiletter control sequences out of 15000+600000
  441000 words of font info for 101 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 71i,14n,74p,507b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,14n,74p,507b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
 r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb
-8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
-mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw
-/times/utmri8a.pfb>
-Output written on gvv_linear_defs.pdf (2 pages, 105016 bytes).
+/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></
+usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/f
+onts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/ut
+mri8a.pfb>
+Output written on gvv_linear_defs.pdf (3 pages, 124586 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
+ 227 PDF objects out of 1000 (max. 8388607)
+ 207 compressed objects within 3 object streams
+ 82 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
